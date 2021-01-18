@@ -1,11 +1,8 @@
 const User = require("../models/signupSchema");
-
-//custom imports
 const AppError = require("../helpers/appError");
 const sendErrorMessage = require("../helpers/sendError");
 const sendResponse = require("../helpers/sendResponse");
 
-//signup function
 const signupUser = async (req, res, next) => {
   try {
     let data = req.body;

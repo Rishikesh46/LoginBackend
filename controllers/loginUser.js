@@ -2,17 +2,17 @@ const bcrypt = require("bcryptjs");
 const { generateToken } = require("../helpers/jwtAuth");
 const User = require("../models/signupSchema");
 
-//custom imports
+
 const AppError = require("../helpers/appError");
 const sendErrorMessage = require("../helpers/sendError");
 const sendResponse = require("../helpers/sendResponse");
 
-//function to login in user
+
 const loginUser = async (req, res, next) => {
   console.log("Current User", req.currentUser);
   console.log(req.body.password);
   console.log(req.currentUser.password);
-  // try {
+ 
     let result = await bcrypt.compare(
       req.body.password,
       req.currentUser.password

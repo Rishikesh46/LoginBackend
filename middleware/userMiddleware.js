@@ -16,11 +16,11 @@ const checkRequestBody = (req, res, next) => {
   }
   next();
 };
-//to check for valid emailId
+
 const isEmailValid = (req, res, next) => {
   next();
 };
-//confirming password
+
 const checkConfirmPassword = (req, res, next) => {
   if (req.body.password !== req.body.confirmPassword) {
     return sendErrorMessage(

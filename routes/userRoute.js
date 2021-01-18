@@ -1,8 +1,8 @@
 const express = require("express");
-//custom inports
+
 const { signupUser } = require("../controllers/signUpUser");
 const { loginUser } = require("../controllers/loginUser");
-//middlewares
+
 const {
   checkRequestBody,
   isEmailValid,
@@ -22,5 +22,4 @@ router
   );
 router.route("/login").post(checkRequestBody, isUserRegistered, loginUser);
 
-//export router
 module.exports = router;
