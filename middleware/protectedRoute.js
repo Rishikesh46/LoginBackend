@@ -2,9 +2,8 @@ const { verifyToken } = require("../helpers/jwtAuth");
 const sendErrorMessage = require("../helpers/sendError");
 const AppError = require("../helpers/appError");
 
-//function to protect route
 const protectRoute = async (req, res, next) => {
-  // extract token
+
   if (!req.headers.authorization) {
     return sendErrorMessage(
       new AppError(401, "Unsuccessful", "Login or Signup"),
@@ -12,7 +11,7 @@ const protectRoute = async (req, res, next) => {
       res
     );
   }
-  // if headers are present
+ 
   let jwtToken = req.headers.authorization.split(" ")[1];
   let decoded;
   try {
