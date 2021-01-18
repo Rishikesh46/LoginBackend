@@ -23,7 +23,7 @@ const protectRoute = async (req, res, next) => {
       res
     );
   }
-  //to check if users registered
+  
   let { email: currentUser } = users.find((user) => {
     return user.email == decoded.email;
   });
@@ -34,9 +34,9 @@ const protectRoute = async (req, res, next) => {
       res
     );
   }
-  // check verification
+  
   req.currentUser = currentUser;
-  // give access
+  
   next();
 };
 module.exports = protectRoute;
