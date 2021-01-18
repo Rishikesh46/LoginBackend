@@ -19,7 +19,7 @@ app.use(express.urlencoded({ extended: false }));
 app.use("/user", router);
 
 mongoose.connect(
-  process.env.DATABASE_URL,
+  process.env.DATABASE_URL || process.env.MONGO_URL,
   {
     useCreateIndex: true,
     useNewUrlParser: true,
